@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memórias</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <style>
+      /* Estilos do cabeçalho */
+      header {
+        background-color: #b8a48a; /* Cor de fundo cinza escuro */
+        color: #ebddcc; /* Cor do texto no cabeçalho */
+        padding: 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombreamento */
+      }
+
+      /* Remova a margem padrão do corpo */
+      body {
+        margin: 0;
+        background-color: #ebddcc;
+      }
+
+      /* Estilos do conteúdo principal */
+      .container {
+        padding: 20px;
+        margin-top: 80px; /* Para evitar que o conteúdo fique oculto sob o cabeçalho */
+        border-top: 6px solid rgba(0, 0, 0, 0.1); /* Borda superior com sombreamento */
+      }
+
+      /* Estilos do carousel */
+      .slick-slider {
+        width: 80%; /* Largura do carousel */
+        margin: 0 auto; /* Centralizar o carousel horizontalmente */
+      }
+
+      .slick-slide img {
+        max-width: 100%; /* Define a largura máxima das imagens para evitar a barra de rolagem */
+        height: 700px; /* Mantém a proporção original da imagem */
+        margin: 0 auto; /* Centralize as imagens horizontalmente */
+        padding-top: 80px;
+        padding-bottom: 20px;
+      }
+
+      .slick-prev,
+      .slick-next {
+        font-size: 24px; /* Tamanho dos botões de navegação */
+        color: #333; /* Cor dos botões de navegação */
+      }
+
+      .slick-prev:hover,
+      .slick-next:hover {
+        color: #000000; /* Cor dos botões de navegação ao passar o mouse */
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Você deixa memórias lindas e inesquecíveis por onde passa!</h1>
+    </header>
+
+    <div class="container">
+      <div class="slick-slider">
+        <div><img src="./img/img01.jpg" alt="Imagem 1" /></div>
+        <div><img src="./img/cachorros.jfif" alt="Imagem 2" /></div>
+        <div><img src="./img/pai.jfif" alt="Imagem 2" /></div>
+        <div><img src="./img/mae.jfif" alt="Imagem 2" /></div>
+        <div><img src="./img/cocoly.jfif" alt="Imagem 2" /></div>
+        <div><img src="./img/mimia.jfif" alt="Imagem 2" /></div>
+        <div><img src="./img/criancas.jfif" alt="Imagem 2" /></div>
+        <div><img src="./img/familia.jfif" alt="Imagem 2" /></div>
+        <div><img src="./img/padre.jfif" alt="Imagem 2" /></div>
+        <div><img src="./img/eu-tios.jfif" alt="Imagem 2" /></div>
+        <div><img src="./img/nos.jfif" alt="Imagem 2" /></div>
+        <div><img src="./img/euu.jfif" alt="Imagem 2" /></div>
+        <div><img src="./img/minha-family.jfif" alt="Imagem 2" /></div>
+        <div><img src="./img/minha-dnv.jfif" alt="Imagem 2" /></div>
+        <div><img src="./img/vovo.jfif" alt="Imagem 2" /></div>
+        <div><img src="./img/felipe.jfif" alt="Imagem 2" /></div>
+        <div><img src="./img/jo.jfif" alt="Imagem 2" /></div>
+        <!-- Adicione mais divs com imagens conforme necessário -->
+      </div>
+      <div class="image-description" id="description">
+        <!-- A descrição será atualizada dinamicamente pelo JavaScript -->
+      </div>
+    </div>
+
+    <!-- Inclua a biblioteca Slick Carousel -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+      // Descrições correspondentes às imagens
+      const imageDescriptions = [
+        '',
+        'Como começar sem citar os doguinhos? Eles que te alegram o tempo todo e que são muito privilegiados de ter uma ótima dona como você!',
+        'O papa, como você gosta de dizer... que te protege, cuida de você e que sempre tenta te proporcionar o melhor!',
+        'Dona Alexsandra, que é sua companheira número 1 kkkkk, nunca te larga na mão e te coloca em primeiro lugar independente do caso. Sua mãe que tem muito orgulho por você e por tudo que você se tornou!',
+        'Sua mini Geovanna, que não poderia ter alguém melhor para se inspirar.',
+        'A Maria, que te adora e, assim como a Nicolly, não poderia ter uma inspiração melhor de mulher!',
+        'Elas irão aprender muito com você, sua força, sua bondade, suas atitudes e com certeza terão muito orgulho de terem te escolhido como inspiração.',
+        'Sua família, que me acolheu tão bem e com tanto carinho... Todas as memórias que você compartilha com eles, ganhará cor, eu tenho certeza!',
+        'Até o padre quis participar! kkkkkkkkk',
+        'Como deixar de lado a maneira que você me inseriu na sua vida tão bem? Ficou do meu lado e não me largou um minuto... até me apresentou pros seus tios kkkkkk',
+        'Você é a minha melhor memória, de mulher, de pessoa, você é a melhor parte de mim e eu nunca vou cansar de dizer o quanto eu te amo!',
+        'Não podemos esquecer de destacar o namorido lindo que você arranjou...',
+        'E não poderia deixar de citar minha família, que te adora, que lembra de você em todas as festas e nunca cansam de elogiar a menina maravilhosa que voce é!',
+        'Eles novamente, pra te relembrar que por onde você passa, traz alegria, amor e compaixão!',
+        'Para fechar, seus dois grandes amores, sua vovó, que você faz questão de cuidar tão bem! Ela tem muito orgulho de ter uma neta como você e com certeza nunca vai se esquecer de tudo que você fez por ela.',
+        'E o Felipe, que te guarda todos os dias de um lugar melhor, te olha com olhos de bondade e amor e, por meio dele, Jesus Cristo trouxe para a terra a Geovanna que temos hoje, que espalha amor, que é luz por onde passa, que onde toca transoforma o ódio em calma e a destruição em paz. ',
+        'A nossa Jo, que hoje completa 18 aninhos de tantas evoluções, de tantas conquistas e vitórias. Hoje o dia é todo seu! Aproveita meu amor, eu te amo princesa!',
+        // Adicione mais descrições conforme necessário
+      ]
+
+      // Elemento HTML para exibir a descrição
+      const descriptionElement = document.getElementById('description')
+
+      // Inicialize o carousel com configurações desejadas
+      const slickSlider = $('.slick-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: '.slick-prev',
+        nextArrow: '.slick-next',
+      })
+
+      // Atualize a descrição quando o carousel mudar de imagem
+      slickSlider.on(
+        'beforeChange',
+        function (event, slick, currentSlide, nextSlide) {
+          const description = imageDescriptions[nextSlide]
+          descriptionElement.textContent = description
+        }
+      )
+    </script>
+  </body>
+</html>
